@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form element</title>
+    <link rel="stylesheet" href="/practice/CSS/index08.css">
+    <style>
+        textarea{
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>회원가입 페이지</h1>
+    <form action="/" method="post">
+        <!-- <form action="입력,전송되는 데이터를 전달받아 처리할 서버파일의 경로나 서버주소"> -->
+            <!-- ex) server.php, server.js -->
+        <!-- <form method="사용자가 입력한 데이터를 전송하는 방법" -->
+            <!-- ex) get, post -->
+        <fieldset>
+            <legend>필수 사항</legend>
+            <table>
+                <tr>
+                    <td><label for="username">사용자 이름:</label></td>
+                    <td><input type="text" id="username" placeholder="아이디를 입력하세요." required></td>
+                    <!-- required 속성은 항상 form태그 내에 있어야 동작함 -->
+                </tr>
+                <tr>
+                    <td><label for="useremail">이메일 주소:</label></td>
+                    <td><input type="email" id="useremail" placeholder="이메일을 입력하세요." required></td>
+                </tr>
+                <tr>
+                    <td><label for="userpassword">사용자 비밀번호:</label></td>
+                    <td><input type="password" id="userpassword" placeholder="비밀번호를 입력하세요." required></td>
+                </tr>
+                <!-- 폼 요소는 인라인 요소 = 블록태그로 묶어 세로로 정렬 -->
+            </table>
+        </fieldset>
+        
+        <fieldset>
+            <legend>옵션 사항</legend>
+            <p>
+                <label for="address">주소:</label>
+                <select name="address" id="address">
+                        <option value="seoul">서울특별시</option>
+                        <option value="busan">부산광역시</option>
+                        <option value="deagu">대구광역시</option>
+                </select>
+            </p>
+            <p>
+                <span>성별: </span>
+                <label for="male">남성</label>
+                <input type="radio" id="male" value="남성" name="gender">
+                <label for="female">여성</label>
+                <input type="radio" id="female" value="여성" name="gender">
+            </p>
+            <p>
+                <span>관심사: </span>
+                <label for="html">HTML</label>
+                <input type="checkbox" id="html" name="html" value="html">
+                <label for="css">CSS</label>
+                <input type="checkbox" id="css" name="css" value="css">
+                <label for="javascript">JAVASCRIPT</label>
+                <input type="checkbox" id="javascript" name="javascript" value="javascript">
+            </p>
+            <p>
+                <label for="message">인사말</label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            </p>
+            <p>
+                <label for="profile">프로필 사진</label>
+                <input type="file" id="profile" name="profile" accept="image/png, image/jepg">
+                <!-- <input type="file" id=" " name=" " accept="수용가능한 파일 확장자 종류"> -->
+            </p>
+            <p>
+                <label for="website">웹사이트: </label>
+                <input type="url" id="website" name="website">
+            </p>
+            <p>
+                <label for="birthday">생년월일: </label>
+                <input type="date" id="birthday" name="birthday">
+            </p>
+            <p>
+                <label for="fruit-choice">좋아하는 과일: </label>
+                <input id="fruit-choice" name="fruit-choice" list="fruit-flavors">
+                <datalist id="fruit-flavors">
+                    <option value="apple"></option>
+                    <option value="banana"></option>
+                    <option value="orange"></option>
+                    <option value="mango"></option>
+                    <option value="watermelon"></option>
+                </datalist>
+            </p>
+        </fieldset>
+        <p>
+            <input type="submit" value="가입하기">
+        </p>
+        <!-- <input type="submit" value="속성값"> = <button type="submit">속성값</button> -->
+
+    </form>
+</body>
+</html>
